@@ -45,6 +45,7 @@ Reused Components:
 No use of external libraries or frameworks or any available implementations of the algorithms.
 
 Visual Representation:
+```
 +-----------------------------------------------------+
 |                 RSA & RC4 Implementations            |
 |    +----------------------+   +------------------+   |
@@ -60,6 +61,8 @@ Visual Representation:
 |                         Local Testing                |
 |                                                      |
 +-----------------------------------------------------+
+
+```
 
 Client-Server Architecture:
 Not Applicable
