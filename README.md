@@ -121,16 +121,16 @@ Given the sensitivity of cryptographic operations, thorough testing and validati
 ## 5. Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
 
-### Formal Verification:
+### - Formal Verification:
 Explore formal methods and tools for verifying the correctness and security properties of the cryptographic algorithms implemented in Rust. This involves using formal specifications and proofs to ensure that the code adheres to its intended behavior.
 
-### Concurrency and Parallelism:
+### - Concurrency and Parallelism:
 Investigate the potential for concurrent or parallel implementations of cryptographic algorithms in Rust. Explore how Rust's ownership and borrowing system can be leveraged to design concurrent algorithms without introducing data races or other concurrency-related issues.
 
-### Dynamic Analysis Tools:
+### - Dynamic Analysis Tools:
 Implement runtime analysis tools to dynamically assess memory safety during the execution of cryptographic algorithms. Tools such as runtime checkers or sanitizers can help identify issues that may not be apparent during static analysis.
 
-### Cross-Language Compatibility:
+### - Cross-Language Compatibility:
 Consider how Rust cryptographic implementations can interact with existing C/C++ codebases. Explore methods for seamless integration or interoperability between Rust and other languages, addressing real-world scenarios where systems may be composed of multiple languages.
 
 ### Exploration of Other Memory Safety Features:
