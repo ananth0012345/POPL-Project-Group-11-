@@ -112,6 +112,37 @@ fn pgra(s: &mut [u8; 256], data: &mut [u8], data_len: usize, n: usize) {
 ```
 
 #### C Code
+```
+// Function for the Key Scheduling Algorithm (KSA)
+void KSA(unsigned char S[], unsigned char key[], int key_len, int N) {
+    int i, j;
+    j = 0;
+    for (i = 0; i < N; i++) {
+        j = (j + S[i] + key[i % key_len]) % N;
+        // Swap S[i] and S[j]
+        unsigned char temp = S[i];
+        S[i] = S[j];
+        S[j] = temp;
+    }
+}
+
+// Function for the Pseudo-Random Generation Algorithm (PGRA)
+void PGRA(unsigned char S[], unsigned char data[], int data_len, int N) {
+    int i, j;
+    i = j = 0;
+    for (int k = 0; k < data_len; k++) {
+        i = (i + 1) % N;
+        j = (j + S[i]) % N;
+        // Swap S[i] and S[j]
+        unsigned char temp = S[i];
+        S[i] = S[j];
+        S[j] = temp;
+        int t = (S[i] + S[j]) % N;
+        data[k] ^= S[t]; // XOR operation with the state vector
+    }
+}
+
+```
 
 ### Memory Safety with Vec<u8>:
 
