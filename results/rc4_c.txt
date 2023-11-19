@@ -1,0 +1,7 @@
+Input text: Hello, RC4!
+Key: SecretKey
+
+Encryption complete.
+Ciphertext: 5C DD 50 2B B0 5E 3E F0 A7 27 1C
+
+Decrypted data: Hello, RC4!
