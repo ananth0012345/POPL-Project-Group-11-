@@ -119,13 +119,17 @@ Given the sensitivity of cryptographic operations, thorough testing and validati
 
 To compare performance, reliability, and memory safety, we used various cutting-edge benchmark tools like Vtune, Perf, ZChampSim, etc., and tested on various platforms. Our in-depth analysis shows that Rust programs perform better in terms of CPU parallelization, cache memory safety, and average run time compared to C programs. Here are some snapshots that provide a summary of the tests performed.
 
+Performance Analysis of rsa.c :  
 ![cimage-1](/images/rsa_c.jpg)
 
+Performance Analysis of rc4.c :  
 ![cimage-1](/images/rc4_c.jpg)
 
+Performance Analysis of rsa.rs : 
 ![cimage-1](/images/rsa_rust.jpg)
 
-![cimage-2](/images/rsa_rust.jpg)
+Performance Analysis of rc4.rs
+![cimage-2](/images/rc4_rust.jpg)
 
 ## 5. Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
