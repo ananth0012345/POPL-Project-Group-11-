@@ -1,49 +1,4 @@
-# POPL-Project-Group-11
-1)Problem Statement (Original Statement):
-Migration of C/C++ Cryptographic Algorithms to Rust, Demonstrating Memory Safety
-POPL Angle:
-The Principles of Programming Languages (POPL) angle in our project lies in the exploration of memory safety aspects when migrating cryptographic algorithms from C/C++ to Rust. POPL focuses on the design and analysis of programming languages, and in this context, our project aims to demonstrate how Rust, with its emphasis on memory safety, can provide a more secure alternative to traditional languages like C/C++ for implementing cryptographic algorithms.
-Previous Solutions:
-Cryptographic algorithms have been implemented in various programming languages, including C/C++ for their efficiency. However, these languages are notorious for memory-related vulnerabilities such as buffer overflows and data corruption.
-Differences in Our Solution:
-Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/C++ to Rust, a language known for its focus on memory safety. By doing so, we aim to address and mitigate common vulnerabilities associated with C/C++ implementations. This migration allows for a comparative analysis of the memory safety aspects between the two languages. It's not just about implementing the algorithms; it's about leveraging Rust's features to enhance the security of cryptographic code.
 
-
-2)Software Architecture Overview:
-
-Components:
-RSA Implementation:
-RSA cryptographic algorithm implemented in both Rust and C.
-RC4 Implementation:
-RC4 cryptographic algorithm implemented in both Rust and C.
-Performance Measurement and Analysis:
-Using Vtune for analyzing the performance of both C and Rust code.
-
-Architecture:
-Dual Implementation:
-Rust and C implementations coexist for both RSA and RC4 cryptographic algorithms.
-Rust Implementation:
-Leverages Rust's memory safety features.
-C Implementation:
-Represents the traditional approach.
-Performance Analysis Component:
-Vtune is utilized for performance analysis, allowing for a detailed examination of both Rust and C implementations to identify bottlenecks and optimize code.
-
-Testing Component:
-Local Testing:
-Testing components are primarily placed on the local machine.
-Various test cases and inputs are provided to assess the correctness and performance of cryptographic algorithms in both Rust and C.
-Vtune is used locally to analyze and profile the performance of the code.
-
-Reuse vs. Development:
-Developed Components:
-Both RSA and RC4 implementations in Rust and C are developed specifically for this project.
-Performance measurement and analysis methods using Vtune are tailored for this project.
-
-Reused Components:
-No use of external libraries or frameworks or any available implementations of the algorithms.
-
-Visual Representation:
 # POPL-Project-Group-11
 1)Problem Statement (Original Statement):
 Migration of C/C++ Cryptographic Algorithms to Rust, Demonstrating Memory Safety
