@@ -6,7 +6,7 @@ The Principles of Programming Languages (POPL) angle in our project lies in the 
 Previous Solutions:
 Cryptographic algorithms have been implemented in various programming languages, including C/C++ for their efficiency. However, these languages are notorious for memory-related vulnerabilities such as buffer overflows and data corruption.
 Differences in Our Solution:
-Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/C++ to Rust, a language known for its focus on memory safety. By doing so, we aim to address and mitigate common vulnerabilities associated with C/C++ implementations. This migration allows for a comparative analysis of the memory safety aspects between the two languages. It's not just about implementing the algorithms; it's about leveraging Rust's features to enhance the security of cryptographic code.
+Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/C++ to Rust, a language known for its focus on memory safety. By doing so, we aim to address and mitigate common vulnerabilities associated with C/C++ implementations. This migration allows for a comparative analysis of the memory safety aspects between the two languages. It's not just about implementing the algorithms; it's about leveraging Rust's features to enhance the security of cryptographi#### C Code.
 
 ## 2. Software Architecture Overview:
 
@@ -16,7 +16,7 @@ RSA cryptographic algorithm implemented in both Rust and C.
 RC4 Implementation:
 RC4 cryptographic algorithm implemented in both Rust and C.
 Performance Measurement and Analysis:
-Using Vtune for analyzing the performance of both C and Rust code.
+Using Vtune for analyzing the performance of both C and #### Rust Code.
 
 ### Architecture:
 Dual Implementation:
@@ -132,7 +132,7 @@ Performance Analysis of rc4.rs
 ![cimage-2](/images/rc4_rust.jpg)
 
 . Memory Safety and Bounds Checking:
-C Code:
+#### C Code:
 
 ```
 int main() {
@@ -142,7 +142,7 @@ int main() {
     return 0;
 }
 ```
-Rust Code:
+#### Rust Code:
 
 ```
 fn main() {
@@ -151,14 +151,14 @@ fn main() {
     println!("{}", arr[index]); // Compiler ensures bounds checking
 }
 ```
-Explanation:
+#### Explanation:
 
 In the C example, there's an out-of-bounds access to the array, which leads to undefined behavior.
 The Rust example uses a Vec, and the attempt to access an element out of bounds is caught at compile time, preventing runtime errors.
 Why Rust is Better:
 Rust's ownership model and borrowing system allow it to perform static analysis and catch issues like array bounds violations at compile time, providing stronger guarantees for memory safety.
 2. Ownership and Borrowing:
-C Code:
+#### C Code:
 
 ```
 void modify_array(int *arr, int length) {
@@ -173,7 +173,7 @@ int main() {
     return 0;
 }
 ```
-Rust Code:
+#### Rust Code:
 
 ```
 fn modify_vector(vec: &mut Vec<i32>) {
@@ -187,14 +187,14 @@ fn main() {
     println!("{}", vec[0]); // Value changed in the function
 }
 ```
-Explanation:
+#### Explanation:
 
 In C, there's no clear way to express ownership or borrowing semantics, making it challenging to manage mutable references safely.
 Rust's borrowing system allows the creation of mutable references, and the compiler enforces rules to prevent data races and ensure memory safety.
 Why Rust is Better:
 Rust's ownership model helps prevent common programming errors related to mutable access and provides a clear and safe way to handle mutable data.
 3. String Ownership and Lifetimes:
-C Code:
+#### C Code:
 
 ```
 char* create_string() {
@@ -208,7 +208,7 @@ int main() {
     return 0;
 }
 ```
-Rust Code:
+#### Rust Code:
 
 ```
 fn create_string() -> &'static str {
@@ -221,14 +221,14 @@ fn main() {
     println!("{}", rust_str);
 }
 ```
-Explanation:
+#### Explanation:
 
-The C code returns a pointer to a local array, leading to undefined behavior when accessed outside the function.
+The #### C Code returns a pointer to a local array, leading to undefined behavior when accessed outside the function.
 Rust uses static lifetimes to indicate that the string has a lifetime that lasts for the entire program, preventing issues related to returning references to local variables.
 Why Rust is Better:
 Rust's ownership and lifetime system prevents dangling references and ensures that references are valid for their intended duration, enhancing memory safety.
 4. Option and Result Types:
-C Code:
+#### C Code:
 
 ```
 int divide(int a, int b, int* result) {
@@ -249,7 +249,7 @@ int main() {
     return 0;
 }
 ```
-Rust Code:
+#### Rust Code:
 
 ```
 fn divide(a: i32, b: i32) -> Option<i32> {
@@ -268,14 +268,14 @@ fn main() {
     }
 }
 ```
-Explanation:
+#### Explanation:
 
-The C code returns an error code for division by zero, and the caller needs to check the return value for errors.
+The #### C Code returns an error code for division by zero, and the caller needs to check the return value for errors.
 Rust uses the Option type to explicitly handle the possibility of division by zero, providing a cleaner and safer way to represent errors.
 Why Rust is Better:
 Rust's use of algebraic data types like Option and Result allows for more expressive error handling, reducing the likelihood of unchecked errors.
 5. Safe Concurrency with Ownership:
-C Code:
+#### C Code:
 
 ```
 #include <stdio.h>
@@ -301,7 +301,7 @@ int main() {
     return 0;
 }
 ```
-Rust Code:
+#### Rust Code:
 
 ```
 use std::thread;
@@ -330,9 +330,9 @@ fn main() {
     println!("Global Variable: {}", global_var); // Safe concurrent access
 }
 ```
-Explanation:
+#### Explanation:
 
-The C code uses threads to increment a global variable without any synchronization mechanisms, leading to data races.
+The #### C Code uses threads to increment a global variable without any synchronization mechanisms, leading to data races.
 Rust ensures safe concurrency by using ownership and borrowing to control access to shared data, preventing data races.
 Why Rust is Better:
 Rust's ownership model provides a safe
