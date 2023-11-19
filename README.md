@@ -74,7 +74,7 @@ This architecture allows for local testing and analysis of both Rust and C imple
 
 ## 3)POPL Aspects in RC4 Implementation:
 
-Memory Safety with Indexing:
+### Memory Safety with Indexing:
 
 In the ksa and pgra functions, array indexing is used (s[i] and key[i % key_len]) to access elements safely within bounds.
 Avoiding Buffer Overflows:
@@ -88,7 +88,7 @@ Lifetime Annotations:
 Lifetime annotations are not explicitly used in these snippets, but the borrow checker ensures proper referencing and borrowing, contributing to memory safety.
 POPL Aspects in RSA Implementation:
 
-Memory Safety with Vec<u8>:
+### Memory Safety with Vec<u8>:
 
 The use of Vec<u8> for data storage ensures dynamic memory allocation and deallocation, contributing to memory safety.
 Error Handling with Result Type:
@@ -115,35 +115,38 @@ Ensuring Memory Safety in Cryptographic Operations:
 
 Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
+## 4) Results
+
+[rustimage-1](/images/rust_rsa1.png)
 
 ## 5) Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
 
-Formal Verification:
+### Formal Verification:
 Explore formal methods and tools for verifying the correctness and security properties of the cryptographic algorithms implemented in Rust. This involves using formal specifications and proofs to ensure that the code adheres to its intended behavior.
 
-Concurrency and Parallelism:
+### Concurrency and Parallelism:
 Investigate the potential for concurrent or parallel implementations of cryptographic algorithms in Rust. Explore how Rust's ownership and borrowing system can be leveraged to design concurrent algorithms without introducing data races or other concurrency-related issues.
 
-Dynamic Analysis Tools:
+### Dynamic Analysis Tools:
 Implement runtime analysis tools to dynamically assess memory safety during the execution of cryptographic algorithms. Tools such as runtime checkers or sanitizers can help identify issues that may not be apparent during static analysis.
 
-Cross-Language Compatibility:
+### Cross-Language Compatibility:
 Consider how Rust cryptographic implementations can interact with existing C/C++ codebases. Explore methods for seamless integration or interoperability between Rust and other languages, addressing real-world scenarios where systems may be composed of multiple languages.
 
-Exploration of Other Memory Safety Features:
+### Exploration of Other Memory Safety Features:
 Investigate additional memory safety features in Rust, such as the borrow checker, and explore how they contribute to preventing common programming errors. Examine how these features could be applied or extended in the context of cryptographic algorithm implementations.
 
-Benchmarking and Performance Optimization:
+### Benchmarking and Performance Optimization:
 Conduct more extensive benchmarking to evaluate the performance of Rust implementations in various scenarios. Identify opportunities for performance optimization while maintaining memory safety, potentially through the use of advanced language features like unsafe blocks.
 
-Extended Cryptographic Algorithm Set:
+### Extended Cryptographic Algorithm Set:
 Expand the scope of cryptographic algorithms covered in the project. Implement and migrate additional algorithms, each highlighting different aspects of memory safety and Rust's features.
 
-Security Auditing:
+### Security Auditing:
 Conduct a comprehensive security audit of the Rust implementations. Engage in code reviews, penetration testing, or collaborate with security experts to identify potential vulnerabilities or areas for improvement in terms of memory safety.
 
-Documentation and Educational Resources:
+### Documentation and Educational Resources:
 Create comprehensive documentation and educational resources highlighting the memory safety features in Rust and their application to cryptographic algorithm implementations. Share insights gained during the project to contribute to the broader programming community.
 
 Integration with Formal Specification Languages:
