@@ -131,7 +131,9 @@ Performance Analysis of rsa.rs :
 Performance Analysis of rc4.rs
 ![cimage-2](/images/rc4_rust.jpg)
 
-. Memory Safety and Bounds Checking:
+### Comparitive Analysis
+Justify the results regarding why Rust exhibited better performance in the majority of benchmark tests conducted. We will analyze how Rust manages memory safety in comparison to C by conducting a comparative analysis of code snippets that provide similar functionalities,  ** as suggested by Prof. Kunal Korgaonkar during Milestone 1 **.
+
 #### C Code:
 
 ```
@@ -141,6 +143,7 @@ int main() {
     printf("%d\n", arr[index]); // Undefined behavior in C
     return 0;
 }
+
 ```
 #### Rust Code:
 
@@ -157,7 +160,9 @@ In the C example, there's an out-of-bounds access to the array, which leads to u
 The Rust example uses a Vec, and the attempt to access an element out of bounds is caught at compile time, preventing runtime errors.
 Why Rust is Better:
 Rust's ownership model and borrowing system allow it to perform static analysis and catch issues like array bounds violations at compile time, providing stronger guarantees for memory safety.
-2. Ownership and Borrowing:
+
+### 2. Ownership and Borrowing:
+   
 #### C Code:
 
 ```
@@ -193,7 +198,9 @@ In C, there's no clear way to express ownership or borrowing semantics, making i
 Rust's borrowing system allows the creation of mutable references, and the compiler enforces rules to prevent data races and ensure memory safety.
 Why Rust is Better:
 Rust's ownership model helps prevent common programming errors related to mutable access and provides a clear and safe way to handle mutable data.
-3. String Ownership and Lifetimes:
+
+### 3. String Ownership and Lifetimes:
+
 #### C Code:
 
 ```
@@ -227,7 +234,9 @@ The #### C Code returns a pointer to a local array, leading to undefined behavio
 Rust uses static lifetimes to indicate that the string has a lifetime that lasts for the entire program, preventing issues related to returning references to local variables.
 Why Rust is Better:
 Rust's ownership and lifetime system prevents dangling references and ensures that references are valid for their intended duration, enhancing memory safety.
-4. Option and Result Types:
+
+### 4 . Option and Result Types:
+
 #### C Code:
 
 ```
@@ -274,7 +283,9 @@ The #### C Code returns an error code for division by zero, and the caller needs
 Rust uses the Option type to explicitly handle the possibility of division by zero, providing a cleaner and safer way to represent errors.
 Why Rust is Better:
 Rust's use of algebraic data types like Option and Result allows for more expressive error handling, reducing the likelihood of unchecked errors.
-5. Safe Concurrency with Ownership:
+
+### 5. Safe Concurrency with Ownership:
+
 #### C Code:
 
 ```
