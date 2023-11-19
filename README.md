@@ -72,61 +72,6 @@ Not Applicable:
 
 This architecture allows for local testing and analysis of both Rust and C implementations, providing insights into performance differences and memory safety aspects. The use of Vtune aids in in-depth performance analysis.
 
-
-
-## 3)POPL Aspects in RC4 Implementation:
-
-### Memory Safety with Indexing:
-
-In the ksa and pgra functions, array indexing is used (s[i] and key[i % key_len]) to access elements safely within bounds.
-Avoiding Buffer Overflows:
-
-The use of safe indexing and swapping in the state vector (s.swap(i, j)) helps prevent buffer overflows and ensures memory safety.
-Static Typing in Rust:
-
-Types are explicitly declared (s: &mut [u8; 256], key: [u8; 9]), utilizing Rust's static typing for compile-time type checking.
-Lifetime Annotations:
-
-Lifetime annotations are not explicitly used in these snippets, but the borrow checker ensures proper referencing and borrowing, contributing to memory safety.
-POPL Aspects in RSA Implementation:
-
-Memory Safety with Vec<u8>:
-
-The use of Vec<u8> for data storage ensures dynamic memory allocation and deallocation, contributing to memory safety.
-Error Handling with Result Type:
-
-The expect method is used for error handling after encrypting and decrypting data, ensuring that any errors during these operations are handled explicitly.
-Static Typing and Explicit Type Conversion:
-
-Types are explicitly declared (bits: usize, string: String), and there's explicit type conversion (string.as_bytes()) to ensure type safety.
-Use of External Libraries (rsa, rand, hex):
-
-External libraries like rsa, rand, and hex are utilized, and their use aligns with memory safety principles as they are expected to be implemented with those considerations.
-Difficulties and Experiences:
-
-### Transition from C to Rust:
-
-Moving from the C-style manual memory management to Rust's ownership model might pose challenges. Ensuring lifetimes and borrowing are appropriately managed could be an initial difficulty.
-Understanding External Libraries:
-
-Incorporating and understanding external libraries, such as rsa and hex, might require familiarity with their documentation and potentially adjusting code to match their conventions.
-Error Handling Paradigm Shift:
-
-Shifting from C-style error handling to Rust's Result type might be challenging initially. Ensuring comprehensive error checking is crucial for robust code.
-Ensuring Memory Safety in Cryptographic Operations:
-
-Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
-
-### Client-Server Architecture:
-Not Applicable
-
-### Database:
-Not Applicable:
-
-This architecture allows for local testing and analysis of both Rust and C implementations, providing insights into performance differences and memory safety aspects. The use of Vtune aids in in-depth performance analysis.
-
-
-
 ## 3)POPL Aspects in RC4 Implementation:
 
 Memory Safety with Indexing:
