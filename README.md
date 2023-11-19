@@ -132,7 +132,8 @@ Performance Analysis of rc4.rs
 ![cimage-2](/images/rc4_rust.jpg)
 
 ### Comparitive Analysis
-Justify the results regarding why Rust exhibited better performance in the majority of benchmark tests conducted. We will analyze how Rust manages memory safety in comparison to C by conducting a comparative analysis of code snippets that provide similar functionalities,  ** as suggested by Prof. Kunal Korgaonkar during Milestone 1 **.
+Justify the results regarding why Rust exhibited better performance in the majority of benchmark tests conducted. We will analyze how Rust manages memory safety in comparison to C by conducting a comparative analysis of code snippets that provide similar functionalities, 
+**as suggested by Prof. Kunal Korgaonkar during Milestone 1 **
 
 #### C Code:
 
