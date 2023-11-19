@@ -394,6 +394,9 @@ To compare performance, reliability, and memory safety, we used various cutting-
 
 
 
+As evident from the images below, the execution time for rsa.c is 0.574 seconds, whereas the rsa.rs code completes in 0.449 seconds. Similarly, for rc4.c, the execution time is 0.520 seconds, whereas the rc4.rs code finishes in 0.445 seconds. Consequently, based on this performance analysis, Rust code exhibits faster execution compared to C code.
+
+
 ### Performance Analysis of rsa.c :  
 ![cimage-1](/images/rsa_c.jpg)
 
