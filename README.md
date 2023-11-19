@@ -159,10 +159,6 @@ Ensuring Memory Safety in Cryptographic Operations:
 
 Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
-
-4)
-
-
 Client-Server Architecture:
 Not Applicable
 
