@@ -1,4 +1,5 @@
 
+
 # POPL-Project-Group-11
 ## 1. Problem Statement (Original Statement):
 Migration of C/C++ Cryptographic Algorithms to Rust, Demonstrating Memory Safety
@@ -116,7 +117,13 @@ Given the sensitivity of cryptographic operations, thorough testing and validati
 
 ## 4. Results
 
-[rustimage-1](/images/rust_rsa1.png)
+[rustimage-1](/images/rsa_rust.jpg)
+
+[rustimage-2](/images/rc4_rust.jpg)
+
+[cimage-1](/images/rsa_c.jpg)
+
+[cimage-2](/images/rsa_rust.jpg)
 
 ## 5. Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
