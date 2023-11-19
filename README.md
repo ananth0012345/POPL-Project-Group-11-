@@ -116,7 +116,7 @@ Ensuring Memory Safety in Cryptographic Operations:
 Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
 ## 4. Results
-[rustimage-2)[/images/rc4_rust.jpg]
+(rustimage-2)[/images/rc4_rust.jpg]
 
 [cimage-1](/images/rsa_c.jpg)
 
