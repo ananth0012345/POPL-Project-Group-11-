@@ -133,19 +133,19 @@ Implement runtime analysis tools to dynamically assess memory safety during the 
 ### - Cross-Language Compatibility:
 Consider how Rust cryptographic implementations can interact with existing C/C++ codebases. Explore methods for seamless integration or interoperability between Rust and other languages, addressing real-world scenarios where systems may be composed of multiple languages.
 
-### Exploration of Other Memory Safety Features:
+### - Exploration of Other Memory Safety Features:
 Investigate additional memory safety features in Rust, such as the borrow checker, and explore how they contribute to preventing common programming errors. Examine how these features could be applied or extended in the context of cryptographic algorithm implementations.
 
-### Benchmarking and Performance Optimization:
+### - Benchmarking and Performance Optimization:
 Conduct more extensive benchmarking to evaluate the performance of Rust implementations in various scenarios. Identify opportunities for performance optimization while maintaining memory safety, potentially through the use of advanced language features like unsafe blocks.
 
-### Extended Cryptographic Algorithm Set:
+### - Extended Cryptographic Algorithm Set:
 Expand the scope of cryptographic algorithms covered in the project. Implement and migrate additional algorithms, each highlighting different aspects of memory safety and Rust's features.
 
-### Security Auditing:
+### - Security Auditing:
 Conduct a comprehensive security audit of the Rust implementations. Engage in code reviews, penetration testing, or collaborate with security experts to identify potential vulnerabilities or areas for improvement in terms of memory safety.
 
-### Documentation and Educational Resources:
+### - Documentation and Educational Resources:
 Create comprehensive documentation and educational resources highlighting the memory safety features in Rust and their application to cryptographic algorithm implementations. Share insights gained during the project to contribute to the broader programming community.
 
 Integration with Formal Specification Languages:
