@@ -84,7 +84,34 @@ Types are explicitly declared (s: &mut [u8; 256], key: [u8; 9]), utilizing Rust'
 Lifetime Annotations:
 
 Lifetime annotations are not explicitly used in these snippets, but the borrow checker ensures proper referencing and borrowing, contributing to memory safety.
-POPL Aspects in RSA Implementation:
+
+#### Rust code
+```
+fn ksa(s: &mut [u8; 256], key: &[u8], key_len: usize, n: usize) {
+    let mut j = 0;
+    for i in 0..n {
+        j = (j + s[i] as usize + key[i % key_len] as usize) % n;
+        // Swap s[i] and s[j]
+        s.swap(i, j);
+    }
+}
+
+// Function for the Pseudo-Random Generation Algorithm (PGRA)
+fn pgra(s: &mut [u8; 256], data: &mut [u8], data_len: usize, n: usize) {
+    let mut i = 0;
+    let mut j = 0;
+    for k in 0..data_len {
+        i = (i + 1) % n;
+        j = (j + s[i] as usize) % n;
+        // Swap s[i] and s[j]
+        s.swap(i, j);
+        let t = (s[i] as usize + s[j] as usize) % n;
+        data[k] ^= s[t]; // XOR operation with the state vector
+    }
+}
+```
+
+#### C Code
 
 ### Memory Safety with Vec<u8>:
 
@@ -99,19 +126,6 @@ Use of External Libraries (rsa, rand, hex):
 
 External libraries like rsa, rand, and hex are utilized, and their use aligns with memory safety principles as they are expected to be implemented with those considerations.
 Difficulties and Experiences:
-
-### Transition from C to Rust:
-
-Moving from the C-style manual memory management to Rust's ownership model might pose challenges. Ensuring lifetimes and borrowing are appropriately managed could be an initial difficulty.
-Understanding External Libraries:
-
-Incorporating and understanding external libraries, such as rsa and hex, might require familiarity with their documentation and potentially adjusting code to match their conventions.
-Error Handling Paradigm Shift:
-
-Shifting from C-style error handling to Rust's Result type might be challenging initially. Ensuring comprehensive error checking is crucial for robust code.
-Ensuring Memory Safety in Cryptographic Operations:
-
-Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
 ### Comparitive Analysis
 Justify the results regarding why Rust exhibited better performance in the majority of benchmark tests conducted. We will analyze how Rust manages memory safety in comparison to C by conducting a comparative analysis of code snippets that provide similar functionalities, **as suggested by Prof. Kunal Korgaonkar during Milestone 1**
@@ -329,6 +343,19 @@ The C Code uses threads to increment a global variable without any synchronizati
 Rust ensures safe concurrency by using ownership and borrowing to control access to shared data, preventing data races.
 Why Rust is Better:
 Rust's ownership model provides a safe
+
+### Transition from C to Rust:
+
+Moving from the C-style manual memory management to Rust's ownership model might pose challenges. Ensuring lifetimes and borrowing are appropriately managed could be an initial difficulty.
+Understanding External Libraries:
+
+Incorporating and understanding external libraries, such as rsa and hex, might require familiarity with their documentation and potentially adjusting code to match their conventions.
+Error Handling Paradigm Shift:
+
+Shifting from C-style error handling to Rust's Result type might be challenging initially. Ensuring comprehensive error checking is crucial for robust code.
+Ensuring Memory Safety in Cryptographic Operations:
+
+Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
 ## 4. Results
 
