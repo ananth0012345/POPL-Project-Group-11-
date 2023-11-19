@@ -1,6 +1,6 @@
 
 # POPL-Project-Group-11
-## 1)Problem Statement (Original Statement):
+## 1. Problem Statement (Original Statement):
 Migration of C/C++ Cryptographic Algorithms to Rust, Demonstrating Memory Safety
 POPL Angle:
 The Principles of Programming Languages (POPL) angle in our project lies in the exploration of memory safety aspects when migrating cryptographic algorithms from C/C++ to Rust. POPL focuses on the design and analysis of programming languages, and in this context, our project aims to demonstrate how Rust, with its emphasis on memory safety, can provide a more secure alternative to traditional languages like C/C++ for implementing cryptographic algorithms.
@@ -10,7 +10,7 @@ Differences in Our Solution:
 Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/C++ to Rust, a language known for its focus on memory safety. By doing so, we aim to address and mitigate common vulnerabilities associated with C/C++ implementations. This migration allows for a comparative analysis of the memory safety aspects between the two languages. It's not just about implementing the algorithms; it's about leveraging Rust's features to enhance the security of cryptographic code.
 
 
-## 2)Software Architecture Overview:
+## 1. Software Architecture Overview:
 
 ### Components:
 RSA Implementation:
@@ -72,7 +72,7 @@ Not Applicable:
 
 This architecture allows for local testing and analysis of both Rust and C implementations, providing insights into performance differences and memory safety aspects. The use of Vtune aids in in-depth performance analysis.
 
-## 3)POPL Aspects in RC4 Implementation:
+## 1. POPL Aspects in RC4 Implementation:
 
 ### Memory Safety with Indexing:
 
@@ -115,11 +115,11 @@ Ensuring Memory Safety in Cryptographic Operations:
 
 Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
-## 4) Results
+## 1. Results
 
 [rustimage-1](/images/rust_rsa1.png)
 
-## 5) Potential for future work
+## 1. Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
 
 ### Formal Verification:
