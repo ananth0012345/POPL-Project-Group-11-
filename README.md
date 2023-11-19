@@ -112,6 +112,7 @@ fn pgra(s: &mut [u8; 256], data: &mut [u8], data_len: usize, n: usize) {
 ```
 
 #### C Code
+
 ```
 // Function for the Key Scheduling Algorithm (KSA)
 void KSA(unsigned char S[], unsigned char key[], int key_len, int N) {
@@ -141,7 +142,6 @@ void PGRA(unsigned char S[], unsigned char data[], int data_len, int N) {
         data[k] ^= S[t]; // XOR operation with the state vector
     }
 }
-
 ```
 
 ### Memory Safety with Vec<u8>:
