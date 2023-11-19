@@ -12,7 +12,7 @@ Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/
 
 ## 2)Software Architecture Overview:
 
-## #Components:
+### Components:
 RSA Implementation:
 RSA cryptographic algorithm implemented in both Rust and C.
 RC4 Implementation:
@@ -20,7 +20,7 @@ RC4 cryptographic algorithm implemented in both Rust and C.
 Performance Measurement and Analysis:
 Using Vtune for analyzing the performance of both C and Rust code.
 
-## #Architecture:
+### Architecture:
 Dual Implementation:
 Rust and C implementations coexist for both RSA and RC4 cryptographic algorithms.
 Rust Implementation:
@@ -30,21 +30,21 @@ Represents the traditional approach.
 Performance Analysis Component:
 Vtune is utilized for performance analysis, allowing for a detailed examination of both Rust and C implementations to identify bottlenecks and optimize code.
 
-## #Testing Component:
+### Testing Component:
 Local Testing:
 Testing components are primarily placed on the local machine.
 Various test cases and inputs are provided to assess the correctness and performance of cryptographic algorithms in both Rust and C.
 Vtune is used locally to analyze and profile the performance of the code.
 
-## #Reuse vs. Development:
+### Reuse vs. Development:
 Developed Components:
 Both RSA and RC4 implementations in Rust and C are developed specifically for this project.
 Performance measurement and analysis methods using Vtune are tailored for this project.
 
-## #Reused Components:
+### Reused Components:
 No use of external libraries or frameworks or any available implementations of the algorithms.
 
-## #Visual Representation:
+### Visual Representation:
 ```
 +-----------------------------------------------------+
 |                 RSA & RC4 Implementations            |
@@ -64,10 +64,10 @@ No use of external libraries or frameworks or any available implementations of t
 
 ```
 
-## #Client-Server Architecture:
+### Client-Server Architecture:
 Not Applicable
 
-## #Database:
+### Database:
 Not Applicable:
 
 This architecture allows for local testing and analysis of both Rust and C implementations, providing insights into performance differences and memory safety aspects. The use of Vtune aids in in-depth performance analysis.
@@ -76,7 +76,7 @@ This architecture allows for local testing and analysis of both Rust and C imple
 
 ## 3)POPL Aspects in RC4 Implementation:
 
-## #Memory Safety with Indexing:
+### Memory Safety with Indexing:
 
 In the ksa and pgra functions, array indexing is used (s[i] and key[i % key_len]) to access elements safely within bounds.
 Avoiding Buffer Overflows:
@@ -104,7 +104,7 @@ Use of External Libraries (rsa, rand, hex):
 External libraries like rsa, rand, and hex are utilized, and their use aligns with memory safety principles as they are expected to be implemented with those considerations.
 Difficulties and Experiences:
 
-## #Transition from C to Rust:
+### Transition from C to Rust:
 
 Moving from the C-style manual memory management to Rust's ownership model might pose challenges. Ensuring lifetimes and borrowing are appropriately managed could be an initial difficulty.
 Understanding External Libraries:
@@ -117,10 +117,10 @@ Ensuring Memory Safety in Cryptographic Operations:
 
 Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
-## #Client-Server Architecture:
+### Client-Server Architecture:
 Not Applicable
 
-## #Database:
+### Database:
 Not Applicable:
 
 This architecture allows for local testing and analysis of both Rust and C implementations, providing insights into performance differences and memory safety aspects. The use of Vtune aids in in-depth performance analysis.
@@ -157,7 +157,7 @@ Use of External Libraries (rsa, rand, hex):
 External libraries like rsa, rand, and hex are utilized, and their use aligns with memory safety principles as they are expected to be implemented with those considerations.
 Difficulties and Experiences:
 
-## #Transition from C to Rust:
+### Transition from C to Rust:
 
 Moving from the C-style manual memory management to Rust's ownership model might pose challenges. Ensuring lifetimes and borrowing are appropriately managed could be an initial difficulty.
 Understanding External Libraries:
