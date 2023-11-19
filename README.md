@@ -322,6 +322,7 @@ fn main() {
 
     println!("Global Variable: {}", global_var); // Safe concurrent access
 }
+```
 
 ## 4. Results
 
@@ -341,8 +342,6 @@ Performance Analysis of rsa.rs :
 Performance Analysis of rc4.rs
 ![cimage-2](/images/rc4_rust.jpg)
 
-
-```
 #### Explanation:
 
 The C Code uses threads to increment a global variable without any synchronization mechanisms, leading to data races.
