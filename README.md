@@ -116,9 +116,14 @@ Ensuring Memory Safety in Cryptographic Operations:
 Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
 ## 4. Results
-(rustimage-2)[/images/rc4_rust.jpg]
+
+To compare performance, reliability, and memory safety, we used various cutting-edge benchmark tools like Vtune, Perf, ZChampSim, etc., and tested on various platforms. Our in-depth analysis shows that Rust programs perform better in terms of CPU parallelization, cache memory safety, and average run time compared to C programs. Here are some snapshots that provide a summary of the tests performed.
 
 ![cimage-1](/images/rsa_c.jpg)
+
+![cimage-1](/images/rc4_c.jpg)
+
+![cimage-1](/images/rsa_rust.jpg)
 
 ![cimage-2](/images/rsa_rust.jpg)
 
