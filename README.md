@@ -411,29 +411,12 @@ To compare performance, reliability, and memory safety, we used various cutting-
 ## 5. Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
 
-### - Formal Verification:
-Explore formal methods and tools for verifying the correctness and security properties of the cryptographic algorithms implemented in Rust. This involves using formal specifications and proofs to ensure that the code adheres to its intended behavior.
+### -Performance Improvements
+After conducting all the tests, we have concluded that Rust outperforms C in terms of reliability (memory safety) and average runtime. The improvements in application security would have a significant impact in the field of cryptography, where privacy and execution speed are key determining factors for successful implementation.
 
-### - Concurrency and Parallelism:
-Investigate the potential for concurrent or parallel implementations of cryptographic algorithms in Rust. Explore how Rust's ownership and borrowing system can be leveraged to design concurrent algorithms without introducing data races or other concurrency-related issues.
+We have successfully converted two popular cryptographic algorithms originally written in C to Rust, resulting in substantial performance improvements. This demonstrates that converting other existing cryptographic algorithms from C to Rust could lead to performance boosts for many commercially used applications.
 
-### - Dynamic Analysis Tools:
-Implement runtime analysis tools to dynamically assess memory safety during the execution of cryptographic algorithms. Tools such as runtime checkers or sanitizers can help identify issues that may not be apparent during static analysis.
-
-### - Cross-Language Compatibility:
-Consider how Rust cryptographic implementations can interact with existing C/C++ codebases. Explore methods for seamless integration or interoperability between Rust and other languages, addressing real-world scenarios where systems may be composed of multiple languages.
-
-### - Exploration of Other Memory Safety Features:
-Investigate additional memory safety features in Rust, such as the borrow checker, and explore how they contribute to preventing common programming errors. Examine how these features could be applied or extended in the context of cryptographic algorithm implementations.
-
-### - Benchmarking and Performance Optimization:
-Conduct more extensive benchmarking to evaluate the performance of Rust implementations in various scenarios. Identify opportunities for performance optimization while maintaining memory safety, potentially through the use of advanced language features like unsafe blocks.
-
-### - Extended Cryptographic Algorithm Set:
-Expand the scope of cryptographic algorithms covered in the project. Implement and migrate additional algorithms, each highlighting different aspects of memory safety and Rust's features.
-
-### - Security Auditing:
-Conduct a comprehensive security audit of the Rust implementations. Engage in code reviews, penetration testing, or collaborate with security experts to identify potential vulnerabilities or areas for improvement in terms of memory safety.
+Currently, thousands of cryptographic algorithms run on C compilers. Implementing all of these in Rust and creating a compact library is a potential future plan.
 
 ### - Documentation and Educational Resources:
 Create comprehensive documentation and educational resources highlighting the memory safety features in Rust and their application to cryptographic algorithm implementations. Share insights gained during the project to contribute to the broader programming community.
