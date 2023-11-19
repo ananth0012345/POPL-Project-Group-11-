@@ -1,5 +1,3 @@
-
-
 # POPL-Project-Group-11
 ## 1. Problem Statement (Original Statement):
 Migration of C/C++ Cryptographic Algorithms to Rust, Demonstrating Memory Safety
@@ -119,6 +117,8 @@ Given the sensitivity of cryptographic operations, thorough testing and validati
 
 To compare performance, reliability, and memory safety, we used various cutting-edge benchmark tools like Vtune, Perf, ZChampSim, etc., and tested on various platforms. Our in-depth analysis shows that Rust programs perform better in terms of CPU parallelization, cache memory safety, and average run time compared to C programs. Here are some snapshots that provide a summary of the tests performed.
 
+
+
 Performance Analysis of rsa.c :  
 ![cimage-1](/images/rsa_c.jpg)
 
@@ -130,6 +130,212 @@ Performance Analysis of rsa.rs :
 
 Performance Analysis of rc4.rs
 ![cimage-2](/images/rc4_rust.jpg)
+
+. Memory Safety and Bounds Checking:
+C Code:
+
+```
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    int index = 10; // Out of bounds access
+    printf("%d\n", arr[index]); // Undefined behavior in C
+    return 0;
+}
+Rust Code:
+
+rust
+Copy code
+fn main() {
+    let arr = vec![1, 2, 3, 4, 5];
+    let index = 10; // Out of bounds access is a compile-time error
+    println!("{}", arr[index]); // Compiler ensures bounds checking
+}
+```
+Explanation:
+
+In the C example, there's an out-of-bounds access to the array, which leads to undefined behavior.
+The Rust example uses a Vec, and the attempt to access an element out of bounds is caught at compile time, preventing runtime errors.
+Why Rust is Better:
+Rust's ownership model and borrowing system allow it to perform static analysis and catch issues like array bounds violations at compile time, providing stronger guarantees for memory safety.
+2. Ownership and Borrowing:
+C Code:
+
+```
+void modify_array(int *arr, int length) {
+    arr[0] = 10;
+    // No way to express ownership or borrow semantics in C
+}
+
+int main() {
+    int arr[5] = {1, 2, 3, 4, 5};
+    modify_array(arr, 5);
+    printf("%d\n", arr[0]); // Value changed in the function
+    return 0;
+}
+```
+Rust Code:
+
+```
+fn modify_vector(vec: &mut Vec<i32>) {
+    vec[0] = 10;
+    // Ownership and borrowing semantics in Rust
+}
+
+fn main() {
+    let mut vec = vec![1, 2, 3, 4, 5];
+    modify_vector(&mut vec);
+    println!("{}", vec[0]); // Value changed in the function
+}
+```
+Explanation:
+
+In C, there's no clear way to express ownership or borrowing semantics, making it challenging to manage mutable references safely.
+Rust's borrowing system allows the creation of mutable references, and the compiler enforces rules to prevent data races and ensure memory safety.
+Why Rust is Better:
+Rust's ownership model helps prevent common programming errors related to mutable access and provides a clear and safe way to handle mutable data.
+3. String Ownership and Lifetimes:
+C Code:
+
+```
+char* create_string() {
+    char str[] = "Hello, C!";
+    return str; // Returning a pointer to a local variable is unsafe
+}
+
+int main() {
+    char* c_str = create_string();
+    printf("%s\n", c_str); // Undefined behavior in C
+    return 0;
+}
+```
+Rust Code:
+
+```
+fn create_string() -> &'static str {
+    let s: &'static str = "Hello, Rust!";
+    s // No ownership issues, string has a static lifetime
+}
+
+fn main() {
+    let rust_str = create_string();
+    println!("{}", rust_str);
+}
+```
+Explanation:
+
+The C code returns a pointer to a local array, leading to undefined behavior when accessed outside the function.
+Rust uses static lifetimes to indicate that the string has a lifetime that lasts for the entire program, preventing issues related to returning references to local variables.
+Why Rust is Better:
+Rust's ownership and lifetime system prevents dangling references and ensures that references are valid for their intended duration, enhancing memory safety.
+4. Option and Result Types:
+C Code:
+
+```
+int divide(int a, int b, int* result) {
+    if (b == 0) {
+        return -1; // Error code for division by zero
+    }
+    *result = a / b;
+    return 0;
+}
+
+int main() {
+    int result;
+    if (divide(10, 0, &result) == 0) {
+        printf("Result: %d\n", result);
+    } else {
+        printf("Error: Division by zero\n");
+    }
+    return 0;
+}
+```
+Rust Code:
+
+```
+fn divide(a: i32, b: i32) -> Option<i32> {
+    if b == 0 {
+        None // Representing division by zero with Option
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    if let Some(result) = divide(10, 0) {
+        println!("Result: {}", result);
+    } else {
+        println!("Error: Division by zero");
+    }
+}
+```
+Explanation:
+
+The C code returns an error code for division by zero, and the caller needs to check the return value for errors.
+Rust uses the Option type to explicitly handle the possibility of division by zero, providing a cleaner and safer way to represent errors.
+Why Rust is Better:
+Rust's use of algebraic data types like Option and Result allows for more expressive error handling, reducing the likelihood of unchecked errors.
+5. Safe Concurrency with Ownership:
+C Code:
+
+```
+#include <stdio.h>
+#include <pthread.h>
+
+int global_var = 0;
+
+void* increment(void* arg) {
+    int* local_var = (int*)arg;
+    for (int i = 0; i < 1000000; i++) {
+        (*local_var)++;
+    }
+    return NULL;
+}
+
+int main() {
+    pthread_t thread1, thread2;
+    pthread_create(&thread1, NULL, increment, (void*)&global_var);
+    pthread_create(&thread2, NULL, increment, (void*)&global_var);
+    pthread_join(thread1, NULL);
+    pthread_join(thread2, NULL);
+    printf("Global Variable: %d\n", global_var); // Unsafe concurrent access
+    return 0;
+}
+```
+Rust Code:
+
+```
+use std::thread;
+
+fn increment(local_var: &mut i32) {
+    for _ in 0..1000000 {
+        *local_var += 1;
+    }
+}
+
+fn main() {
+    let mut global_var = 0;
+    let mut handles = vec![];
+
+    for _ in 0..2 {
+        let handle = thread::spawn(move || {
+            increment(&mut global_var);
+        });
+        handles.push(handle);
+    }
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
+
+    println!("Global Variable: {}", global_var); // Safe concurrent access
+}
+```
+Explanation:
+
+The C code uses threads to increment a global variable without any synchronization mechanisms, leading to data races.
+Rust ensures safe concurrency by using ownership and borrowing to control access to shared data, preventing data races.
+Why Rust is Better:
+Rust's ownership model provides a safe
 
 ## 5. Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
