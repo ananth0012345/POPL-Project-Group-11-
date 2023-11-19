@@ -323,6 +323,12 @@ fn main() {
     println!("Global Variable: {}", global_var); // Safe concurrent access
 }
 ```
+#### Explanation:
+
+The C Code uses threads to increment a global variable without any synchronization mechanisms, leading to data races.
+Rust ensures safe concurrency by using ownership and borrowing to control access to shared data, preventing data races.
+Why Rust is Better:
+Rust's ownership model provides a safe
 
 ## 4. Results
 
@@ -330,24 +336,19 @@ To compare performance, reliability, and memory safety, we used various cutting-
 
 
 
-Performance Analysis of rsa.c :  
+### Performance Analysis of rsa.c :  
 ![cimage-1](/images/rsa_c.jpg)
 
-Performance Analysis of rc4.c :  
+### Performance Analysis of rc4.c :  
 ![cimage-1](/images/rc4_c.jpg)
 
-Performance Analysis of rsa.rs : 
+### Performance Analysis of rsa.rs : 
 ![cimage-1](/images/rsa_rust.jpg)
 
-Performance Analysis of rc4.rs
+### Performance Analysis of rc4.rs
 ![cimage-2](/images/rc4_rust.jpg)
 
-#### Explanation:
 
-The C Code uses threads to increment a global variable without any synchronization mechanisms, leading to data races.
-Rust ensures safe concurrency by using ownership and borrowing to control access to shared data, preventing data races.
-Why Rust is Better:
-Rust's ownership model provides a safe
 
 ## 5. Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
