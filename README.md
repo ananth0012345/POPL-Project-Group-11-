@@ -118,9 +118,9 @@ Given the sensitivity of cryptographic operations, thorough testing and validati
 ## 4. Results
 (rustimage-2)[/images/rc4_rust.jpg]
 
-[cimage-1](/images/rsa_c.jpg)
+![cimage-1](/images/rsa_c.jpg)
 
-[cimage-2](/images/rsa_rust.jpg)
+![cimage-2](/images/rsa_rust.jpg)
 
 ## 5. Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
