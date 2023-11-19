@@ -6,7 +6,7 @@ The Principles of Programming Languages (POPL) angle in our project lies in the 
 Previous Solutions:
 Cryptographic algorithms have been implemented in various programming languages, including C/C++ for their efficiency. However, these languages are notorious for memory-related vulnerabilities such as buffer overflows and data corruption.
 Differences in Our Solution:
-Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/C++ to Rust, a language known for its focus on memory safety. By doing so, we aim to address and mitigate common vulnerabilities associated with C/C++ implementations. This migration allows for a comparative analysis of the memory safety aspects between the two languages. It's not just about implementing the algorithms; it's about leveraging Rust's features to enhance the security of cryptographi#### C Code.
+Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/C++ to Rust, a language known for its focus on memory safety. By doing so, we aim to address and mitigate common vulnerabilities associated with C/C++ implementations. This migration allows for a comparative analysis of the memory safety aspects between the two languages. It's not just about implementing the algorithms; it's about leveraging Rust's features to enhance the security of cryptographic C Code.
 
 ## 2. Software Architecture Overview:
 
@@ -16,7 +16,7 @@ RSA cryptographic algorithm implemented in both Rust and C.
 RC4 Implementation:
 RC4 cryptographic algorithm implemented in both Rust and C.
 Performance Measurement and Analysis:
-Using Vtune for analyzing the performance of both C and #### Rust Code.
+Using Vtune for analyzing the performance of both C and  Rust Code.
 
 ### Architecture:
 Dual Implementation:
@@ -70,7 +70,7 @@ Not Applicable:
 
 This architecture allows for local testing and analysis of both Rust and C implementations, providing insights into performance differences and memory safety aspects. The use of Vtune aids in in-depth performance analysis.
 
-## 3. POPL Aspects in RC4 Implementation:
+## 3. POPL Aspects:
 
 ### Memory Safety with Indexing:
 
@@ -132,8 +132,7 @@ Performance Analysis of rc4.rs
 ![cimage-2](/images/rc4_rust.jpg)
 
 ### Comparitive Analysis
-Justify the results regarding why Rust exhibited better performance in the majority of benchmark tests conducted. We will analyze how Rust manages memory safety in comparison to C by conducting a comparative analysis of code snippets that provide similar functionalities, 
-**as suggested by Prof. Kunal Korgaonkar during Milestone 1 **
+Justify the results regarding why Rust exhibited better performance in the majority of benchmark tests conducted. We will analyze how Rust manages memory safety in comparison to C by conducting a comparative analysis of code snippets that provide similar functionalities, **as suggested by Prof. Kunal Korgaonkar during Milestone 1**
 
 #### C Code:
 
@@ -231,7 +230,7 @@ fn main() {
 ```
 #### Explanation:
 
-The #### C Code returns a pointer to a local array, leading to undefined behavior when accessed outside the function.
+The C Code returns a pointer to a local array, leading to undefined behavior when accessed outside the function.
 Rust uses static lifetimes to indicate that the string has a lifetime that lasts for the entire program, preventing issues related to returning references to local variables.
 Why Rust is Better:
 Rust's ownership and lifetime system prevents dangling references and ensures that references are valid for their intended duration, enhancing memory safety.
@@ -344,7 +343,7 @@ fn main() {
 ```
 #### Explanation:
 
-The #### C Code uses threads to increment a global variable without any synchronization mechanisms, leading to data races.
+The C Code uses threads to increment a global variable without any synchronization mechanisms, leading to data races.
 Rust ensures safe concurrency by using ownership and borrowing to control access to shared data, preventing data races.
 Why Rust is Better:
 Rust's ownership model provides a safe
