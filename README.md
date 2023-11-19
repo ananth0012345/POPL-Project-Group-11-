@@ -1,6 +1,6 @@
 
 # POPL-Project-Group-11
-##1)Problem Statement (Original Statement):
+## 1)Problem Statement (Original Statement):
 Migration of C/C++ Cryptographic Algorithms to Rust, Demonstrating Memory Safety
 POPL Angle:
 The Principles of Programming Languages (POPL) angle in our project lies in the exploration of memory safety aspects when migrating cryptographic algorithms from C/C++ to Rust. POPL focuses on the design and analysis of programming languages, and in this context, our project aims to demonstrate how Rust, with its emphasis on memory safety, can provide a more secure alternative to traditional languages like C/C++ for implementing cryptographic algorithms.
@@ -10,9 +10,9 @@ Differences in Our Solution:
 Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/C++ to Rust, a language known for its focus on memory safety. By doing so, we aim to address and mitigate common vulnerabilities associated with C/C++ implementations. This migration allows for a comparative analysis of the memory safety aspects between the two languages. It's not just about implementing the algorithms; it's about leveraging Rust's features to enhance the security of cryptographic code.
 
 
-##2)Software Architecture Overview:
+## 2)Software Architecture Overview:
 
-###Components:
+## #Components:
 RSA Implementation:
 RSA cryptographic algorithm implemented in both Rust and C.
 RC4 Implementation:
@@ -20,7 +20,7 @@ RC4 cryptographic algorithm implemented in both Rust and C.
 Performance Measurement and Analysis:
 Using Vtune for analyzing the performance of both C and Rust code.
 
-###Architecture:
+## #Architecture:
 Dual Implementation:
 Rust and C implementations coexist for both RSA and RC4 cryptographic algorithms.
 Rust Implementation:
@@ -30,21 +30,21 @@ Represents the traditional approach.
 Performance Analysis Component:
 Vtune is utilized for performance analysis, allowing for a detailed examination of both Rust and C implementations to identify bottlenecks and optimize code.
 
-###Testing Component:
+## #Testing Component:
 Local Testing:
 Testing components are primarily placed on the local machine.
 Various test cases and inputs are provided to assess the correctness and performance of cryptographic algorithms in both Rust and C.
 Vtune is used locally to analyze and profile the performance of the code.
 
-###Reuse vs. Development:
+## #Reuse vs. Development:
 Developed Components:
 Both RSA and RC4 implementations in Rust and C are developed specifically for this project.
 Performance measurement and analysis methods using Vtune are tailored for this project.
 
-###Reused Components:
+## #Reused Components:
 No use of external libraries or frameworks or any available implementations of the algorithms.
 
-###Visual Representation:
+## #Visual Representation:
 ```
 +-----------------------------------------------------+
 |                 RSA & RC4 Implementations            |
@@ -64,19 +64,19 @@ No use of external libraries or frameworks or any available implementations of t
 
 ```
 
-###Client-Server Architecture:
+## #Client-Server Architecture:
 Not Applicable
 
-###Database:
+## #Database:
 Not Applicable:
 
 This architecture allows for local testing and analysis of both Rust and C implementations, providing insights into performance differences and memory safety aspects. The use of Vtune aids in in-depth performance analysis.
 
 
 
-##3)POPL Aspects in RC4 Implementation:
+## 3)POPL Aspects in RC4 Implementation:
 
-###Memory Safety with Indexing:
+## #Memory Safety with Indexing:
 
 In the ksa and pgra functions, array indexing is used (s[i] and key[i % key_len]) to access elements safely within bounds.
 Avoiding Buffer Overflows:
@@ -104,7 +104,7 @@ Use of External Libraries (rsa, rand, hex):
 External libraries like rsa, rand, and hex are utilized, and their use aligns with memory safety principles as they are expected to be implemented with those considerations.
 Difficulties and Experiences:
 
-###Transition from C to Rust:
+## #Transition from C to Rust:
 
 Moving from the C-style manual memory management to Rust's ownership model might pose challenges. Ensuring lifetimes and borrowing are appropriately managed could be an initial difficulty.
 Understanding External Libraries:
@@ -117,17 +117,17 @@ Ensuring Memory Safety in Cryptographic Operations:
 
 Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
-###Client-Server Architecture:
+## #Client-Server Architecture:
 Not Applicable
 
-###Database:
+## #Database:
 Not Applicable:
 
 This architecture allows for local testing and analysis of both Rust and C implementations, providing insights into performance differences and memory safety aspects. The use of Vtune aids in in-depth performance analysis.
 
 
 
-##3)POPL Aspects in RC4 Implementation:
+## 3)POPL Aspects in RC4 Implementation:
 
 Memory Safety with Indexing:
 
@@ -157,7 +157,7 @@ Use of External Libraries (rsa, rand, hex):
 External libraries like rsa, rand, and hex are utilized, and their use aligns with memory safety principles as they are expected to be implemented with those considerations.
 Difficulties and Experiences:
 
-###Transition from C to Rust:
+## #Transition from C to Rust:
 
 Moving from the C-style manual memory management to Rust's ownership model might pose challenges. Ensuring lifetimes and borrowing are appropriately managed could be an initial difficulty.
 Understanding External Libraries:
@@ -171,7 +171,7 @@ Ensuring Memory Safety in Cryptographic Operations:
 Given the sensitivity of cryptographic operations, thorough testing and validation are essential to ensure memory safety, avoiding potential vulnerabilities.
 
 
-##5) Potential for future work
+## 5) Potential for future work
 Given more time, there are several potential areas for future work and additional considerations related to Principles of Programming Languages (POPL) aspects. Here are some possibilities:
 
 Formal Verification:
