@@ -44,21 +44,7 @@ Reused Components:
 No use of external libraries or frameworks or any available implementations of the algorithms.
 
 Visual Representation:
-+-----------------------------------------------------+
-|                 RSA & RC4 Implementations            |
-|    +----------------------+   +------------------+   |
-|    |   Rust Implementation|   |   C Implementation|  |
-|    |  (Memory Safety)     |   |   (Traditional)   |  |
-|    +----------------------+   +------------------+   |
-|                                                      |
-|             +-------------------------------------+  |
-|             | Performance Measurement and Analysis | |
-|             |             (Using Vtune)            | |
-|             +-------------------------------------+  |
-|                                                      |
-|                         Local Testing                |
-|                                                      |
-+-----------------------------------------------------+
+
 
 Client-Server Architecture:
 Not Applicable
