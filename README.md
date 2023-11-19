@@ -141,10 +141,10 @@ int main() {
     printf("%d\n", arr[index]); // Undefined behavior in C
     return 0;
 }
+```
 Rust Code:
 
-rust
-Copy code
+```
 fn main() {
     let arr = vec![1, 2, 3, 4, 5];
     let index = 10; // Out of bounds access is a compile-time error
