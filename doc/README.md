@@ -398,16 +398,16 @@ As evident from the images below, the execution time for rsa.c is 0.574 seconds,
 
 
 ### Performance Analysis of rsa.c :  
-![cimage-1](/images/rsa_c.jpg)
+![cimage-1](/results/rsa_c.jpg)
 
 ### Performance Analysis of rc4.c :  
-![cimage-1](/images/rc4_c.jpg)
+![cimage-1](/results/rc4_c.jpg)
 
 ### Performance Analysis of rsa.rs : 
-![cimage-1](/images/rsa_rust.jpg)
+![cimage-1](/results/rsa_rust.jpg)
 
 ### Performance Analysis of rc4.rs
-![cimage-2](/images/rc4_rust.jpg)
+![cimage-2](/results/rc4_rust.jpg)
 
 
 
