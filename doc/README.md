@@ -1,11 +1,11 @@
 # POPL-Project-Group-11
 ## 1. Problem Statement (Original Statement):
 Migration of C/C++ Cryptographic Algorithms to Rust, Demonstrating Memory Safety
-POPL Angle:
+### POPL Angle:
 The Principles of Programming Languages (POPL) angle in our project lies in the exploration of memory safety aspects when migrating cryptographic algorithms from C/C++ to Rust. POPL focuses on the design and analysis of programming languages, and in this context, our project aims to demonstrate how Rust, with its emphasis on memory safety, can provide a more secure alternative to traditional languages like C/C++ for implementing cryptographic algorithms.
-Previous Solutions:
+### Previous Solutions:
 Cryptographic algorithms have been implemented in various programming languages, including C/C++ for their efficiency. However, these languages are notorious for memory-related vulnerabilities such as buffer overflows and data corruption.
-Differences in Our Solution:
+### Differences in Our Solution:
 Our solution involves migrating the RC4 and RSA cryptographic algorithms from C/C++ to Rust, a language known for its focus on memory safety. By doing so, we aim to address and mitigate common vulnerabilities associated with C/C++ implementations. This migration allows for a comparative analysis of the memory safety aspects between the two languages. It's not just about implementing the algorithms; it's about leveraging Rust's features to enhance the security of cryptographic C Code.
 
 ## 2. Software Architecture Overview:
@@ -427,3 +427,20 @@ Create comprehensive documentation and educational resources highlighting the me
 Integration with Formal Specification Languages:
 Explore integration with formal specification languages like TLA+ or Alloy to formally describe cryptographic algorithm properties and behavior. Verify that the Rust implementations conform to these specifications.
 Continued exploration in these areas would contribute to a more comprehensive understanding of how Rust, as a language designed with memory safety in mind, can be effectively utilized in the domain of cryptographic algorithms.
+
+## 6. Compilation and Usage
+
+To run the C code, Compile it using any standard C compiler and run the executable.For Example
+```
+gcc -o a.out rsa.c
+./a.out
+```
+
+To run the rust code use the rustc compiler and create a executable, then run the executable.
+```
+rustc rsa.rs
+./a.out
+```
+
+To perform the benchmarks tests install the [Vtune](https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2023-1/installation.html) tool and run benchmark tests on the executables created.
+
