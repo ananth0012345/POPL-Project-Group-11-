@@ -427,3 +427,20 @@ Create comprehensive documentation and educational resources highlighting the me
 Integration with Formal Specification Languages:
 Explore integration with formal specification languages like TLA+ or Alloy to formally describe cryptographic algorithm properties and behavior. Verify that the Rust implementations conform to these specifications.
 Continued exploration in these areas would contribute to a more comprehensive understanding of how Rust, as a language designed with memory safety in mind, can be effectively utilized in the domain of cryptographic algorithms.
+
+## 6. Compilation and Usage
+
+To run the C code, Compile it using any standard C compiler and run the executable.For Example
+```
+gcc -o a.out rsa.c
+./a.out
+```
+
+To run the rust code use the rustc compiler and create a executable, then run the executable.
+```
+rustc rsa.rs
+./a.out
+```
+
+To perform the benchmarks tests install the [Vtune](https://www.intel.com/content/www/us/en/docs/vtune-profiler/user-guide/2023-1/installation.html) tool and run benchmark tests on the executables created.
+
