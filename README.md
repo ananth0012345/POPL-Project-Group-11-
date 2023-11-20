@@ -45,7 +45,7 @@ No use of external libraries or frameworks or any available implementations of t
 ### Visual Representation:
 ```
 +-----------------------------------------------------+
-|                 RSA & RC4 Implementations            |
+|               RSA & RC4 Implementations              |
 |    +----------------------+   +------------------+   |
 |    |   Rust Implementation|   |   C Implementation|  |
 |    |  (Memory Safety)     |   |   (Traditional)   |  |
