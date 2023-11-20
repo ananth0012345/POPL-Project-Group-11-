@@ -1,0 +1,4 @@
+Parth Shitole(2021A7PS2907G): Wrote the Rust code and wrote the Readme and conducted comparitive analysis as suggested in milestone 1.
+Ananth(2021A7PS2647G): Wrote the C code and designed the ppt and wrote Readme.
+Prateek Chitre(2021A7PS2841G): Wrote the Rust code and Performed All the benchmark analysis.
+Niranjan Rajeev(2021A7PS3055G):  Wrote C code and wrote the Readme file
